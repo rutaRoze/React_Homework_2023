@@ -1,4 +1,5 @@
 import Product from "./Product";
+//import ProductModal from "./ProductModal";
 
 function ProductList() {
   const products = [
@@ -85,10 +86,8 @@ function ProductList() {
 
   return (
     <>
-      <div className="container text-center m-3">
-        <div className="row row-cols-3 ">
-          <div className="col">{mappedProducts}</div>
-        </div>
+      <div className="container text-center">
+        <div className="row row-cols-md-1 row-cols-lg-3 ">{mappedProducts}</div>
       </div>
     </>
   );
