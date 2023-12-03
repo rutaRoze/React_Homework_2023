@@ -13,21 +13,17 @@ function Product({
   quantity,
   category,  
   discount,
-  pressBuyToShowModal
+  
 }) {
   const [showModal, setShowModal] = useState(false);
 
-  // const changeShowModalValue = () => {
-  //   if (showModal) {
-  //     setShowModal(true);
-  //   } else {
-  //     setShowModal(false);
-  //   }
-  // };
-  const buyButtonClickForShowingModal = () => {
-    pressBuyToShowModal(title, description, quantity);
-    setShowModal(true);
-  }
+const openModalUponBay = () => {
+  setShowModal(true);
+}
+
+const closeModal = () => {
+  setShowModal(false);
+}
   
   return (
     <>
@@ -44,12 +40,18 @@ function Product({
             <Card.Text> {description}</Card.Text>
             <Card.Text> {category} </Card.Text>
             <Card.Text> {discount} </Card.Text>
-            <Button variant="primary" onClick={buyButtonClickForShowingModal}>
+            <Button variant="primary" onClick={openModalUponBay}>
               Buy
             </Button>
-            {showModal && <ProductModal title={title} description={description} quantity={quantity}/>}
           </Card.Body>
         </Card>
+
+        <ProductModal 
+        showModal={showModal}
+        closeModal={closeModal}
+        openModalUponBay={openModalUponBay}
+        title={title} description={description} quantity={quantity}/>
+
       </div>
     </>
   );

@@ -1,13 +1,13 @@
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { useState } from "react";
+//import { useState } from "react";
 //import ProductToast from "./ProductToast";
 import "./ProductModal.css";
-import ProductToast from "./ProductToast";
+//mport ProductToast from "./ProductToast";
 
 function ProductModal({ title, description, quantity, showModal,closeModal, openModalUponBay}) {
   
-  const [closedToast, setOpenToast] = useState(true);
+  //const [closedToast, setOpenToast] = useState(true);
 
   return (
     <>
@@ -31,10 +31,10 @@ function ProductModal({ title, description, quantity, showModal,closeModal, open
                 <Button variant="secondary" onClick={closeModal}>
                   Close
                 </Button>
-                <Button variant="primary" onClick={() => {openModalUponBay(title, description, quantity); closeModal}}>
+                <Button variant="primary" onClick={() => {openModalUponBay(title, description, quantity); closeModal()}} >
                   Add to Cart
                 </Button>
-                {!closedToast && <ProductToast title={title} />}
+                {/* {!closedToast && <ProductToast title={title} />} */}
               </Modal.Footer>
             </Modal.Dialog>
           </div>

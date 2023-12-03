@@ -2,11 +2,11 @@ import Toast from "react-bootstrap/Toast";
 import "./ProductToast.css";
 //import Button from "react-bootstrap/Button";
 
-function ProductToast({ title}) {
+function ProductToast({ showToast, closeToast, title}) {
 
   return (
     <>
-        <Toast>
+        <Toast showToast={showToast} closeToast={closeToast}>
           <Toast.Header closeButton={false}>
             <strong className="me-auto">{title}</strong>
           </Toast.Header>
