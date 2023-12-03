@@ -95,6 +95,7 @@ function ProductList() {
 
   const mappedProducts = products.map((product) => {
     return (
+      <>
       <Product
         key={product.id}
         image={product.image}
@@ -106,6 +107,7 @@ function ProductList() {
         discount={product.discount}
         clickBuy={clickBuy}
       />
+      </>
     );
   });
 
