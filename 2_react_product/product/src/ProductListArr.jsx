@@ -1,5 +1,7 @@
 import Product from "./Product";
+import ProductModal from "./ProductModal";
 //import ProductModal from "./ProductModal";
+import { useState } from "react";
 
 function ProductList() {
   const products = [
@@ -84,11 +86,30 @@ function ProductList() {
     );
   });
 
+
+  
+  const productDescriptionForModal = {
+    title: products.title,
+    description: products.description,
+    quantity: products.quantity
+  }
+
+  const [showModal, setShowModal] = useState({showModal: false, productDescriptionForModal});
+
+  openModal({title}) {
+// open modal 
+// set title
+  }
+
   return (
     <>
-      <div className="container text-center">
+      <button onClick={() => openModal(products[2].title)}>Show Modal</button>
+      <div className="container text-center position-relative">
         <div className="row row-cols-md-1 row-cols-lg-3 ">{mappedProducts}</div>
       </div>
+      {!hiddenModal && (
+        <ProductModal title={products.title} description={description} quantity={quantity} closeModal={setHiddenModal} />
+      )}
     </>
   );
 }
