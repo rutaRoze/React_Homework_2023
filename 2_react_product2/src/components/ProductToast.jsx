@@ -1,6 +1,8 @@
-import Toast from 'react-bootstrap/Toast';
+import Toast from "react-bootstrap/Toast";
 
-function ProductToast({hideToast, title}) {
+function ProductToast({ hideToast, product }) {
+const {title} = product;
+
   return (
     <Toast onClose={hideToast} className="z-2 position-absolute top-0 end-0">
       <Toast.Header closeButton>

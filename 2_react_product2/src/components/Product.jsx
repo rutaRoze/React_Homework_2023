@@ -2,32 +2,25 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import DiscountBadge from "./DiscountBadge";
 
-function Product({
-  image,
-  title,
-  description,
-  price,
-  quantity,
-  category,
-  discount,
-  showModal,
-}) {
+function Product({ product, showModal }) {
+  const { images, title, description, price, category, discountPercentage } = product;
+
   return (
-    <div className="col">
+    <div className="col p-2">
       <Card style={{ width: "18rem" }}>
         <div className="position-relative">
-          <Card.Img variant="top" src={image} />
-          <DiscountBadge discount={discount} />
+          <Card.Img variant="top" src={images[0]} />
+          <DiscountBadge discount={discountPercentage} />
         </div>
         <Card.Body>
           <Card.Title>{title}</Card.Title>
           <Card.Text> {price} Eur</Card.Text>
-          <Card.Text> {quantity} qty</Card.Text>
           <Card.Text> {description}</Card.Text>
           <Card.Text> {category} </Card.Text>
-          <Card.Text> {discount} </Card.Text>
-          <Card.Text>Some quick example text.</Card.Text>
-          <Button variant="primary" onClick={() => showModal(title, description, quantity)}>
+          <Button
+            variant="primary"
+            onClick={() => showModal(product)}
+          >
             Buy
           </Button>
         </Card.Body>

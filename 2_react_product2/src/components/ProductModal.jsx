@@ -1,7 +1,10 @@
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
-function ProductModal({ hideModal, showToast, title, description, quantity }) {
+function ProductModal({ hideModal, showToast, product }) {
+
+const {title, description} = product;
+
   return (
     <div
       className="modal show position-absolute top-50 start-0"
@@ -14,7 +17,6 @@ function ProductModal({ hideModal, showToast, title, description, quantity }) {
 
         <Modal.Body>
           <p>{description}</p>
-          <p>{quantity} qty</p>
         </Modal.Body>
 
         <Modal.Footer>
@@ -24,7 +26,7 @@ function ProductModal({ hideModal, showToast, title, description, quantity }) {
           <Button
             variant="primary"
             onClick={() => {
-              showToast(title);
+              showToast(product);
               hideModal();
             }}
           >
