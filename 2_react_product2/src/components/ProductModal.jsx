@@ -7,7 +7,7 @@ const {title, description} = product;
 
   return (
     <div
-      className="modal show position-absolute top-50 start-0"
+      className="modal show position-absolute top-0 start-0"
       style={{ display: "block", position: "initial" }}
     >
       <Modal.Dialog>

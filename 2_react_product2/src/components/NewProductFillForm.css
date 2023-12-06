@@ -1,0 +1,21 @@
+.form-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0rem 45rem;
+    height: 100vh;
+        
+}
+
+.background-form {
+    background-color: #73b6b6;
+}
+
+.form-fieldsitle {
+    color: #979595;
+}
+
+.form-button {
+    background-color: #3b5a5a;
+    border-color: black;
+    border-radius: 8px;
+}
