@@ -11,10 +11,16 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import Login from "./authentication/Login";
 import UserProfile from "./authentication/UserProfile";
-import Authorization from "./authentication/Auhorization";
-import PERMISSIONS from "./authentication/permissions";
+// import Authorization from "./authentication/Auhorization";
+// import PERMISSIONS from "./authentication/permissions";
 import Authentication from "./authentication/Authentication";
 library.add(fas);
+
+
+
+
+
+
 
 function App() {
   return (
@@ -24,13 +30,13 @@ function App() {
         <Route path="/productlist" element={<ProductList />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/productlist/:id" element={<ProductDetails />} />
-        <Route
+        {/* <Route
           element={
             <Authorization permissions={[PERMISSIONS.CAN_VIEW_CONTACTS]} />
           }
-        >
+        > */}
           <Route path="/contacts" element={<Contacts />} />
-        </Route>
+        {/* </Route> */}
         <Route path="*" element={<ErrorPage />} />
         {/* <Route
           element={

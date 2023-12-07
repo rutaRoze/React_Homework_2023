@@ -1,57 +1,102 @@
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
+import { useState } from "react";
 import { useAuth } from "../authentication/AuthenticationProvider";
+import "./NavBar.css"
 
 function NavBar() {
+  const { user } = useAuth();
 
-const {user} = useAuth();
+  const [isNavCollapsed, setIsNavCollapsed] = useState(true);
+
+  const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
 
   return (
     <>
-      <Navbar bg="light" data-bs-theme="light">
-        <Container>
-          <Navbar.Brand>My Shop</Navbar.Brand>
-          <Nav className="me-auto">
-            <div className="p-3 text-decoration-none">
-              <Link className="text-decoration-none" to="/">
-                Home
-              </Link>
-            </div>
-            <div className="p-3">
-              <Link className="text-decoration-none" to="/productlist">
-                Product List
-              </Link>
-            </div>
-            <div className="p-3">
-              <Link className="text-decoration-none" to="/contacts">
-                Contacts
-              </Link>
-            </div>
-            <div className="p-3">
-              <Link className="text-decoration-none" to="/fillform">
-                Add New Product
-              </Link>
-            </div>
-            {!user.username && (
-            <div className="p-3">
-              <Link className="text-decoration-none" to="/login">
-                Login
-              </Link>
-            </div>
-            )}
-
-            {user.username && (
-            <div className="p-3">
-              <Link className="text-decoration-none" to="/profile">
-                User Profile
-              </Link>
-            </div>
-            )}
-          </Nav>
-        </Container>
-      </Navbar>
+      <nav
+        className="navbar navbar-expand-lg bg-body-tertiary"
+        style={{ padding: "0" }}
+      >
+        <div
+          className="container-fluid "
+          style={{ backgroundColor: "#3b5a5a", padding: "10px" }}
+        >
+          <a className="navbar-brand text-light" href="/">
+            My Shop
+          </a>
+          <button
+            className="navbar-toggler text-light"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
+            aria-expanded="!isNavCollapsed ? true : false"
+            aria-label="Toggle navigation"
+            onClick={handleNavCollapse}
+          >
+            <span className="navbar-toggler-icon "></span>
+          </button>
+          <div
+            className={`${isNavCollapsed && "collapse"} navbar-collapse`}
+            id="navbarTogglerDemo02"
+          >
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <a className="nav-link text-light" aria-current="page" href="/">
+                  Home
+                </a>
+              </li>
+              <li className="nav-item">
+                <a
+                  className="nav-link text-light"
+                  aria-disabled="true"
+                  href="/productlist"
+                >
+                  Product List
+                </a>
+              </li>
+              <li className="nav-item ">
+                <a
+                  className="nav-link text-light"
+                  aria-disabled="true"
+                  href="/contacts"
+                >
+                  Conatacts
+                </a>
+              </li>
+              <li className="nav-item ">
+                <a className="nav-link  text-light" href="/fillform">
+                  Add New Product
+                </a>
+              </li>
+              {!user.username && (
+                <li className="nav-item ">
+                  <a className="nav-link text-light" href="/login">
+                    Login
+                  </a>
+                </li>
+              )}
+              {user.username && (
+                <li className="nav-item ">
+                  <a className="nav-link text-light" href="/profile">
+                    User Profile
+                  </a>
+                </li>
+              )}
+            </ul>
+            <form className="d-flex" role="search">
+              <input
+                className="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button className="btn btn-outline-light" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
     </>
   );
 }

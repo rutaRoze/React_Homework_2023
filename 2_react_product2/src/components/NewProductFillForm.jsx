@@ -64,6 +64,12 @@ function NewProductFillForm() {
 
   return (
     <>
+      {showConfirmation && (
+        <NewProductConfirmation
+          product={newProduct}
+          hideConfirmation={hideConfirmation}
+        />
+      )}
       <div className="background-form ">
         <div className="form-container background-form ">
           <form onSubmit={handleSubmit} className="mt-3">
@@ -170,13 +176,6 @@ function NewProductFillForm() {
           </form>
         </div>
       </div>
-
-      {showConfirmation && (
-        <NewProductConfirmation
-          product={newProduct}
-          hideConfirmation={hideConfirmation}
-        />
-      )}
     </>
   );
 }
