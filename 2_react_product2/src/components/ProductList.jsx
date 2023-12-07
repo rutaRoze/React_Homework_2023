@@ -60,7 +60,7 @@ function ProductList() {
   return (
     <>
       <div className="container-fluid text-center align-content-center  position-relative background-color-product-list px-5">
-        <div className="row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6 background-color-product-list">
+        <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6 background-color-product-list">
           {mappedProducts}
         </div>
       </div>

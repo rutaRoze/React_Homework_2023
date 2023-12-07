@@ -8,12 +8,12 @@
 .contact-background {
   background-color: #73b6b6;
   height: 100vh;
-  background-image: url("https://images.pexels.com/photos/821754/pexels-photo-821754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  /* background-image: url("https://images.pexels.com/photos/821754/pexels-photo-821754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .icon-size {
-    font-size: 20px;
+    font-size: 25px;
 }

@@ -7,7 +7,7 @@ const Contacts = () => {
     <div className="contact-background contact-container">
       <div className="container">
         <div className="row">
-          <h5 className="col-12 mb-5">You can contact us:</h5>
+          <h4 className="col-12 mb-5">You can contact us:</h4>
           <div className="col-3"></div>
           <div className="col-2">
             <FontAwesomeIcon className="icon-size" icon="fa-solid fa-phone" />

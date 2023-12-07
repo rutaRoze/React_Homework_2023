@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./NewProductFillForm.css";
 import axios from "axios";
+import NewProductConfirmation from "./NewProductConfirmation";
 
 function NewProductFillForm() {
   const [formData, setFormData] = useState({
@@ -12,6 +13,13 @@ function NewProductFillForm() {
   });
 
   const [inputError, setInputError] = useState(false);
+  const [showConfirmation, setShowConfirmation] = useState(false);
+  const [newProduct, setNewProduct] = useState();
+  const [isLoading, setIsLoading] = useState(false);
+
+  if (isLoading) {
+    return <div>Data is loading...</div>;
+  }
 
   const handleForm = (event) => {
     setFormData((previousFormData) => ({
@@ -27,8 +35,8 @@ function NewProductFillForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(`Product ${formData.title} was successfuly added`);
     sendDataToBackend();
+    setIsLoading(true);
   };
 
   const sendDataToBackend = () => {
@@ -40,12 +48,19 @@ function NewProductFillForm() {
         category: formData.category,
       })
       .then((response) => {
-        console.log(response);
+        setNewProduct(response.data);
+        //console.log(response.data);
+        setIsLoading(false);
+        setShowConfirmation(true);
       })
       .catch((error) => console.log(error));
   };
 
   //console.log("formData", formData);
+
+  const hideConfirmation = () => {
+    setShowConfirmation(false);
+  };
 
   return (
     <>
@@ -67,7 +82,6 @@ function NewProductFillForm() {
                   name="title"
                   value={formData.title}
                   onChange={handleForm}
-                  minLength={2}
                 />
               </div>
               <div className="mb-3">
@@ -120,7 +134,9 @@ function NewProductFillForm() {
                   value={formData.category}
                   onChange={handleForm}
                 >
-                  <option className="form-fields-title">Product category</option>
+                  <option className="form-fields-title">
+                    Product category
+                  </option>
                   <option className="form-fields-title">smartphones</option>
                   <option className="form-fields-title">laptops</option>
                   <option className="form-fields-title">fragnances</option>
@@ -154,6 +170,13 @@ function NewProductFillForm() {
           </form>
         </div>
       </div>
+
+      {showConfirmation && (
+        <NewProductConfirmation
+          product={newProduct}
+          hideConfirmation={hideConfirmation}
+        />
+      )}
     </>
   );
 }
