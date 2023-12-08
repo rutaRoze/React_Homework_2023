@@ -1,21 +1,21 @@
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import "./ProductModal.css"
 
 function ProductModal({ hideModal, showToast, product }) {
-
-const {title, description} = product;
+  const { title, description } = product;
 
   return (
     <div
       className="modal show position-absolute top-0 start-0"
       style={{ display: "block", position: "initial" }}
     >
-      <Modal.Dialog>
+      <Modal.Dialog className="position-fixed top-50 start-50 translate-middle ">
         <Modal.Header closeButton onHide={hideModal}>
           <Modal.Title>{title}</Modal.Title>
         </Modal.Header>
 
-        <Modal.Body>
+        <Modal.Body className="">
           <p>{description}</p>
         </Modal.Body>
 

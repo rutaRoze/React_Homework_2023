@@ -5,17 +5,33 @@ function UserProfile() {
   const { user, logout } = useAuth(); // arba useContext(AuthCOntext)
   const navigate = useNavigate();
 
+  const buttonStyle = {
+    backgroundColor: "#3b5a5a",
+    color: "rgb(249, 250, 251)",
+    borderRadius: "8px",
+    width: "5rem",
+  };
+
   return (
     <>
-      <h1>Welcome {user.username}</h1>
-      <button
-        onClick={() => {
-          logout();
-          navigate(`/login`);
+      <div
+        style={{
+          backgroundColor: "#3fc9c9",
+          height: "100vh",
+          color: "#3b5a5a",
         }}
       >
-        Logout
-      </button>
+        <h3 className="py-5">Welcome {user.username}</h3>
+        <button
+          style={buttonStyle}
+          onClick={() => {
+            logout();
+            navigate(`/login`);
+          }}
+        >
+          Logout
+        </button>
+      </div>
     </>
   );
 }

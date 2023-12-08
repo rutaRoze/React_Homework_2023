@@ -11,6 +11,7 @@
 } */
 
 .background-color {
+  background-color: #3fc9c9;
   background-image: url("https://images.pexels.com/photos/6214370/pexels-photo-6214370.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
   background-repeat: no-repeat;
   background-position: center;

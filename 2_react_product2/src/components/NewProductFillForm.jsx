@@ -70,9 +70,10 @@ function NewProductFillForm() {
           hideConfirmation={hideConfirmation}
         />
       )}
-      <div className="background-form ">
-        <div className="form-container background-form ">
-          <form onSubmit={handleSubmit} className="mt-3">
+
+        <div className="container-fluid background-form ">
+          <div className="row justify-content-center">
+          <form onSubmit={handleSubmit} className=" col-8 col-sm-8 col-md-6 col-xl-4 mt-3">
             <fieldset>
               <legend style={{ color: "#3b5a5a", fontWeight: "500" }}>
                 New Product Fill Form
@@ -167,15 +168,15 @@ function NewProductFillForm() {
               </div>
               <button
                 type="submit"
-                className="btn btn-primary"
+                className="form-button"
                 disabled={inputError}
               >
                 Submit
               </button>
             </fieldset>
           </form>
+          </div>
         </div>
-      </div>
     </>
   );
 }

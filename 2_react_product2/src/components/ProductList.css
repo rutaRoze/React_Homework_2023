@@ -1,4 +1,10 @@
 
 .background-color-product-list {
-    background-color: #73b6b6;
+    background-color: #3fc9c9;
+    /* height: 100vh; */
+    background-image: url("https://img.freepik.com/premium-vector/blue-template-abstract-background-with-curves-lines-shadow-flyer-brochure-booklet-websites-design_153082-1207.jpg?size=626&ext=jpg&ga=GA1.1.1140924224.1701777987&semt=ais");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #3b5a5a;;
 }

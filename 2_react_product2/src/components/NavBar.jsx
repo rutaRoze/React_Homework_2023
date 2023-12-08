@@ -60,7 +60,7 @@ function NavBar() {
                   aria-disabled="true"
                   href="/contacts"
                 >
-                  Conatacts
+                  Contacts
                 </a>
               </li>
               <li className="nav-item ">
