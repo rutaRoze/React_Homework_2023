@@ -1,0 +1,9 @@
+.reserved-robo {
+    filter: grayscale(1);
+}
+
+.reserved-text {
+    padding-top: 3px;
+    padding-bottom: 5px;
+    color: red;
+}
