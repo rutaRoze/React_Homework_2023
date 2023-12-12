@@ -10,7 +10,7 @@ function IceCreamShop() {
     priceBeforeDiscount: 0,
     priceAfterDiscount: 0,
   });
-
+  // const [chosenIceCream, setChosenIceCream] = useState();
   const [discount, setDiscount] = useState(5);
 
   const buyIceCream = (iceCreamToChose) => {
@@ -26,6 +26,7 @@ function IceCreamShop() {
     });
     setIceCreamList(updatedIceCreamList);
     totalPriceCounter(iceCreamToChose);
+    // setChosenIceCream(iceCreamToChose);
   };
 
   const totalPriceCounter = (iceCream) => {
@@ -47,17 +48,30 @@ function IceCreamShop() {
     });
   };
 
-  const mappedIceCream = iceCreamList.map((iceCream) => {
+  const mappedIceCreamForFlavor = iceCreamList.map((iceCream) => {
     return (
       <React.Fragment key={iceCream.key}>
         <IceCreamFlavors iceCream={iceCream} buyIceCream={buyIceCream} />
-        <IceCreamCount iceCream={iceCream} />
-        <IceCreamTotalPrice discount={discount} totalPrice={totalPrice} />
       </React.Fragment>
     );
   });
 
-  return <div>{mappedIceCream}</div>;
+  const mappedIceCreamForCount = iceCreamList.map((iceCream) => {
+    return (
+      <React.Fragment key={iceCream.key}>
+        <IceCreamCount iceCream={iceCream} />
+      </React.Fragment>
+
+    );
+  });
+
+  return (
+    <>
+      {mappedIceCreamForFlavor}
+      {mappedIceCreamForCount}
+      <IceCreamTotalPrice discount={discount} totalPrice={totalPrice} />
+    </>
+  );
 }
 
 export default IceCreamShop;
