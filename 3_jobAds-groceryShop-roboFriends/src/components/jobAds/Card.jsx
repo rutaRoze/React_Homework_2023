@@ -1,5 +1,5 @@
 function Card({ card }) {
-  const { companyname, position, country, contractype, postingdate, logo } =
+  const { companyname, position, country, contracttype, postingdate, logo } =
     card;
 
   return (
@@ -14,8 +14,8 @@ function Card({ card }) {
               <p className="card-title">{companyname}</p>
               <h5 className="card-text">{position}</h5>
               <p className="card-text">
-                <small className="text-body-secondary">{postingdate}</small>
-                <small className="text-body-secondary">{contractype}</small>
+                <small className="text-body-secondary pe-2"  >{postingdate}</small>
+                <small className="text-body-secondary pe-2">{contracttype}</small>
                 <small className="text-body-secondary">{country}</small>
               </p>
             </div>

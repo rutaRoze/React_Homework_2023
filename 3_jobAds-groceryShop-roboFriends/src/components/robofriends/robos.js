@@ -5,7 +5,7 @@ export const robosData = [
     username: "Siddhu",
     email: "muffin@gmail.com",
     avatar: "https://robohash.org/set_set3/bgset_bg1/1?size=200x200",
-    reserved: true,
+    reserved: false,
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ export const robosData = [
     username: "Vannu",
     email: "cupcake@gmail.com",
     avatar: "https://robohash.org/set_set3/bgset_bg1/2?size=200x200",
-    reserved: true,
+    reserved: false,
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ export const robosData = [
     username: "gugglu",
     email: "harshit@gmail.com",
     avatar: "https://robohash.org/set_set3/bgset_bg1/4?size=200x200",
-    reserved: true,
+    reserved: false,
   },
   {
     id: 5,

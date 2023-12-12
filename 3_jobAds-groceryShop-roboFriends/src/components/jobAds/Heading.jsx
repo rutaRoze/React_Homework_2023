@@ -39,14 +39,10 @@ function Heading() {
   }
 
   const mapppedCards = cardArray.map((card) => {
-    return (
-      <>
-        <Card key={card.id} card={card} />
-      </>
-    );
+    return <Card key={card.id} card={card} />;
   });
 
-  return { mapppedCards };
+  return <>{mapppedCards}</>;
 }
 
 export default Heading;
